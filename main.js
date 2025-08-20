@@ -37,3 +37,8 @@ setInterval(typeTitle, 200); // scrie câte o literă la fiecare 200ms
   // Actualizare la fiecare 1 secundă
   const interval = setInterval(updateTimer, 1000);
   updateTimer();
+
+console.log(
+  "%cHI, IF YOU SEE THIS YOU JUST DISCOVERED AN EASTER EGG! WELL DONE! 🥚",
+  "color: white; background: black; font-size: 18px; padding: 8px; border-radius: 6px;"
+);
