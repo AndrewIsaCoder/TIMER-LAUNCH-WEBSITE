@@ -1,16 +1,23 @@
-const text = "| Welcome |"; // textul pe care vrei să îl scrie
-let index = 0;
+const text = "| WELCOME |";
+let idx = text.length;
+let dir = -1; 
 
-function typeTitle() {
-  if (index <= text.length) {
-    document.title = text.substring(0, index);
-    index++;
-  } else {
-    index = 0; // reia animația de la început
-  }
+function renderTitle(s) {
+  document.title = s;
+  const el = document.getElementById("titlu-tab");
+  if (el) el.textContent = s;
 }
 
-setInterval(typeTitle, 200); // scrie câte o literă la fiecare 200ms
+function tickTitle() {
+  renderTitle(text.slice(0, idx));
+  idx += dir;
+  if (idx === 1) dir = +1;             
+  if (idx === text.length) dir = -1; 
+}
+
+clearInterval(window._titleInterval);
+window._titleInterval = setInterval(tickTitle, 500);
+tickTitle();
 
   // Data țintă: 24 mai 2027, ora 00:00:00
   const targetDate = new Date("May 24, 2027 00:00:00").getTime();
@@ -20,7 +27,7 @@ setInterval(typeTitle, 200); // scrie câte o literă la fiecare 200ms
     const distance = targetDate - now;
 
     if (distance < 0) {
-      document.getElementById("timer").innerHTML = "Timpul a expirat!";
+      document.getElementById("timer").innerHTML = "Time Expired!";
       clearInterval(interval);
       return;
     }
@@ -34,11 +41,11 @@ setInterval(typeTitle, 200); // scrie câte o literă la fiecare 200ms
       days + " Days " + hours + " Hours " + minutes + " Minutes " + seconds + " Seconds";
   }
 
-  // Actualizare la fiecare 1 secundă
+
   const interval = setInterval(updateTimer, 1000);
   updateTimer();
-
+// DE REZOLVAT :
 console.log(
   "%cHI, IF YOU SEE THIS YOU JUST DISCOVERED AN EASTER EGG! WELL DONE! 🥚",
-  "color: white; background: black; font-size: 18px; padding: 8px; border-radius: 6px;"
+  "color: white; background: black; font-size: 18px; padding: 8px; border-radius: 6px;" 
 );
