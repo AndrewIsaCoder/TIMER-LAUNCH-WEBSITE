@@ -4,46 +4,177 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title id="titlu-tab">| WELCOME |</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="main.js"></script>
-    <link rel="icon" href="./assets/connection.png">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EEVK2CS6MY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-EEVK2CS6MY');
-</script>
-<script type="text/javascript">
-var _iub = _iub || [];
-_iub.csConfiguration = {"siteId":4209216,"cookiePolicyId":23053007,"lang":"en","storage":{"useSiteId":true}};
-</script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4209216.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+    <link rel="icon" href="./assets/connection.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- IMPORTANT: încarcă main.js după parse (previn conflicte cu DOM-ul) -->
+    <script src="main.js" defer></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEVK2CS6MY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-EEVK2CS6MY");
+    </script>
+
+    <!-- Iubenda -->
+    <script type="text/javascript">
+      var _iub = _iub || [];
+      _iub.csConfiguration = {
+        siteId: 4209216,
+        cookiePolicyId: 23053007,
+        lang: "en",
+        storage: { useSiteId: true },
+      };
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4209216.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
   </head>
+
   <body>
-    <video id="Video-background" autoplay loop muted plays-inline>
+    <video id="Video-background" autoplay loop muted playsinline>
       <source src="./assets/Video2.mp4" />
     </video>
+
     <h2 id="text-buga-srl">Buga Srl</h2>
     <h1 id="titlu-pagina">JOURNEY BEGINS IN</h1>
-    <div class = "Social-media-icons">
-    <ul>
-      <li><a href="https://www.instagram.com"><img src="./assets/instagram.png" alt="Poza-instagram" /></a></li>
-      <li><a href="https://www.linkedin.com"><img src="./assets/linkedin.png" alt="Poza-Linkedin" /></a></li>
-      <li><a href="https://www.whatsapp.com"><img src="./assets/whastapp.png" alt="Poza-Whatsapp" /></a></li>
-      <li><a href="https://www.youtube.com"><img src="./assets/youtube.png" alt="Poza-Youtube" /></a></li>
-      <li><a href="https://www.facebook.com"><img src="./assets/facebook.png" alt="Poza-Facebook" /></a></li>
-    </ul>
+
+    <div class="Social-media-icons">
+      <ul>
+        <li><a href="https://www.instagram.com"><img src="./assets/instagram.png" alt="Instagram" /></a></li>
+        <li><a href="https://www.linkedin.com"><img src="./assets/linkedin.png" alt="LinkedIn" /></a></li>
+        <li><a href="https://www.whatsapp.com"><img src="./assets/whastapp.png" alt="WhatsApp" /></a></li>
+        <li><a href="https://www.youtube.com"><img src="./assets/youtube.png" alt="YouTube" /></a></li>
+        <li><a href="https://www.facebook.com"><img src="./assets/facebook.png" alt="Facebook" /></a></li>
+        <li><a href="" id="open-newsletter"  display: block;"><img src="./assets/apple.png" alt="Newsletter"></a></li>
+      </ul>
     </div>
+
     <div id="timer"></div>
+
     <p id="text-lansare">
-      Hold tight as we are preparing for launching the most astonishing 
-      product ever!
+      Hold tight as we are preparing for launching the most astonishing product ever!
     </p>
+
     <p id="copyright">&#169; Buga SRL</p>
+
+    <!-- ABOUT BUTTON -->
+    <button id="buton-intrare-home-screen">Learn More!</button>
+
+    <!-- ABOUT MODAL (folosește CSS-ul tău: #popup-modal + #popup-modal.modal-hidden + .modal-content) -->
+    <div id="popup-modal" class="modal-hidden">
+      <div class="modal-content">
+        <span id="close-modal" class="close-btn" aria-label="Close">&times;</span>
+        <h2>Welcome!</h2>
+        <p>
+          Welcome to BUGA SRL 🚀 We are an innovative IT & Marketing company dedicated to helping
+          businesses grow in the digital world.
+        </p>
+        <p>
+          <b>Web Development</b> – modern, responsive, and secure websites<br />
+          <b>Digital Marketing & Promotion</b> – boosting your brand visibility online<br />
+          <b>IT Consulting</b> – tailored solutions to help your business thrive<br />
+          ✨ Together, we build the future of technology and marketing.
+        </p>
+        <p><b>STAY TUNED!</b></p>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER BUTTON -->
+
+    <!-- NEWSLETTER MODAL (ascuns cu atribut HTML, fără CSS inline) -->
+    <div id="newsletter-modal" hidden>
+      <div class="modal-content">
+        <span id="close-newsletter" class="close-btn" aria-label="Close">&times;</span>
+        <h2>Subscribe to our Newsletter</h2>
+        <form id="newsletter-form">
+          <input
+            type="email"
+            id="newsletter-email"
+            placeholder="Your email"
+            required
+            style="padding:10px; border-radius:6px; border:1px solid #ccc; width:80%; margin-bottom:1em;"
+          />
+          <br />
+          <button
+            type="submit"
+            style="padding:10px 24px; border-radius:6px; border:none; background:#48ff00; color:#222; font-weight:bold; cursor:pointer;"
+          >
+            Subscribe
+          </button>
+        </form>
+        <div id="newsletter-success" style="display:none; margin-top:1em;">
+          Thank you for subscribing! 🎉
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE SCRIPTS (fără CSS inline) -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // === ABOUT MODAL ===
+        const aboutOpen   = document.getElementById('buton-intrare-home-screen');
+        const aboutModal  = document.getElementById('popup-modal');
+        const aboutClose  = document.getElementById('close-modal');
+        if (aboutOpen && aboutModal && aboutClose) {
+          aboutOpen.addEventListener('click', function (e) {
+            e.preventDefault();
+            aboutModal.classList.remove('modal-hidden');
+          });
+          aboutClose.addEventListener('click', function () {
+            aboutModal.classList.add('modal-hidden');
+          });
+          // click pe overlay închide
+          aboutModal.addEventListener('click', function (e) {
+            if (e.target === aboutModal) aboutModal.classList.add('modal-hidden');
+          });
+          // nu propagăm click-ul din interior
+          const aboutContent = aboutModal.querySelector('.modal-content');
+          if (aboutContent) aboutContent.addEventListener('click', function (e) { e.stopPropagation(); });
+        }
+
+        // === NEWSLETTER MODAL === (folosește atributul [hidden])
+        const nlOpen    = document.getElementById('open-newsletter');
+        const nlModal   = document.getElementById('newsletter-modal');
+        const nlClose   = document.getElementById('close-newsletter');
+        const nlForm    = document.getElementById('newsletter-form');
+        const nlSuccess = document.getElementById('newsletter-success');
+
+        function openNewsletter(e) {
+          if (e) e.preventDefault();
+          nlModal.removeAttribute('hidden');
+        }
+        function closeNewsletter() {
+          nlModal.setAttribute('hidden', '');
+          if (nlSuccess) nlSuccess.style.display = 'none';
+          if (nlForm) nlForm.style.display = 'block';
+        }
+
+        if (nlOpen && nlModal && nlClose) {
+          nlOpen.addEventListener('click', openNewsletter);
+          nlClose.addEventListener('click', closeNewsletter);
+          // click pe overlay închide
+          nlModal.addEventListener('click', function (e) {
+            if (e.target === nlModal) closeNewsletter();
+          });
+          // nu propagăm click-ul din interior
+          const nlContent = nlModal.querySelector('.modal-content');
+          if (nlContent) nlContent.addEventListener('click', function (e) { e.stopPropagation(); });
+        }
+
+        // submit newsletter (simulat)
+        if (nlForm && nlSuccess) {
+          nlForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            nlForm.style.display = 'none';
+            nlSuccess.style.display = 'block';
+          });
+        }
+      });
+    </script>
   </body>
 </html>

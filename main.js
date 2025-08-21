@@ -1,3 +1,7 @@
+console.log(
+  "%cHI, IF YOU SEE THIS YOU JUST DISCOVERED AN EASTER EGG! WELL DONE! 🥚",
+  "color: white; background: black; font-size: 18px; padding: 8px; border-radius: 6px;" 
+);
 const text = "| WELCOME |";
 let idx = text.length;
 let dir = -1; 
@@ -45,7 +49,3 @@ tickTitle();
   const interval = setInterval(updateTimer, 1000);
   updateTimer();
 // DE REZOLVAT :
-console.log(
-  "%cHI, IF YOU SEE THIS YOU JUST DISCOVERED AN EASTER EGG! WELL DONE! 🥚",
-  "color: white; background: black; font-size: 18px; padding: 8px; border-radius: 6px;" 
-);
