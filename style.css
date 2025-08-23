@@ -17,6 +17,7 @@ body {
 #titlu-pagina {
   text-align: center;
   letter-spacing: 4px;
+  color: #fff;
 }
 
 .Social-media-icons {
@@ -51,11 +52,13 @@ img {
   font-size: 4rem;
   letter-spacing: 1px;
   margin: 40px;
+  color: #fff;
 }
 
 #text-lansare {
   text-align: center;
   font-size: 1.3rem;
+  color: #fff;
 }
 #copyright {
   position: fixed;
@@ -103,7 +106,7 @@ box-shadow: 0 6px 32px rgba(0,0,0,0.28);
 #popup-modal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;

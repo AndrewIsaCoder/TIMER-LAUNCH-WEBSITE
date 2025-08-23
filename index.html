@@ -8,10 +8,10 @@
     <link rel="icon" href="./assets/connection.png" />
     <link rel="stylesheet" href="style.css" />
 
-    <!-- IMPORTANT: încarcă main.js după parse (previn conflicte cu DOM-ul) -->
+    
     <script src="main.js" defer></script>
 
-    <!-- Google tag (gtag.js) -->
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEVK2CS6MY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +20,7 @@
       gtag("config", "G-EEVK2CS6MY");
     </script>
 
-    <!-- Iubenda -->
+    
     <script type="text/javascript">
       var _iub = _iub || [];
       _iub.csConfiguration = {
@@ -37,7 +37,7 @@
 
   <body>
     <video id="Video-background" autoplay loop muted playsinline>
-      <source src="./assets/Video2.mp4" />
+      <source src="./assets/Video-Background.mp4" />
     </video>
 
     <h2 id="text-buga-srl">Buga Srl</h2>
@@ -62,10 +62,10 @@
 
     <p id="copyright">&#169; Buga SRL</p>
 
-    <!-- ABOUT BUTTON -->
+    
     <button id="buton-intrare-home-screen">Learn More!</button>
 
-    <!-- ABOUT MODAL (folosește CSS-ul tău: #popup-modal + #popup-modal.modal-hidden + .modal-content) -->
+    
     <div id="popup-modal" class="modal-hidden">
       <div class="modal-content">
         <span id="close-modal" class="close-btn" aria-label="Close">&times;</span>
@@ -84,9 +84,9 @@
       </div>
     </div>
 
-    <!-- NEWSLETTER BUTTON -->
+    
 
-    <!-- NEWSLETTER MODAL (ascuns cu atribut HTML, fără CSS inline) -->
+    
     <div id="newsletter-modal" hidden>
       <div class="modal-content">
         <span id="close-newsletter" class="close-btn" aria-label="Close">&times;</span>
@@ -113,10 +113,10 @@
       </div>
     </div>
 
-    <!-- PAGE SCRIPTS (fără CSS inline) -->
+    
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        // === ABOUT MODAL ===
+        
         const aboutOpen   = document.getElementById('buton-intrare-home-screen');
         const aboutModal  = document.getElementById('popup-modal');
         const aboutClose  = document.getElementById('close-modal');
@@ -128,16 +128,16 @@
           aboutClose.addEventListener('click', function () {
             aboutModal.classList.add('modal-hidden');
           });
-          // click pe overlay închide
+          
           aboutModal.addEventListener('click', function (e) {
             if (e.target === aboutModal) aboutModal.classList.add('modal-hidden');
           });
-          // nu propagăm click-ul din interior
+          
           const aboutContent = aboutModal.querySelector('.modal-content');
           if (aboutContent) aboutContent.addEventListener('click', function (e) { e.stopPropagation(); });
         }
 
-        // === NEWSLETTER MODAL === (folosește atributul [hidden])
+        
         const nlOpen    = document.getElementById('open-newsletter');
         const nlModal   = document.getElementById('newsletter-modal');
         const nlClose   = document.getElementById('close-newsletter');
@@ -157,16 +157,16 @@
         if (nlOpen && nlModal && nlClose) {
           nlOpen.addEventListener('click', openNewsletter);
           nlClose.addEventListener('click', closeNewsletter);
-          // click pe overlay închide
+          
           nlModal.addEventListener('click', function (e) {
             if (e.target === nlModal) closeNewsletter();
           });
-          // nu propagăm click-ul din interior
+          
           const nlContent = nlModal.querySelector('.modal-content');
           if (nlContent) nlContent.addEventListener('click', function (e) { e.stopPropagation(); });
         }
 
-        // submit newsletter (simulat)
+        
         if (nlForm && nlSuccess) {
           nlForm.addEventListener('submit', function (e) {
             e.preventDefault();
