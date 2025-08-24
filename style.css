@@ -70,7 +70,7 @@ img {
 }
 
 .Social-media-icons a:hover img {
-  filter: grayscale(1) contrast(2) brightness(1.2) drop-shadow(0 0 8px #631515);
+  filter: grayscale(1) contrast(2) brightness(1.2) drop-shadow(0 0 8px #ffffff);
   transform: scale(1.15);
   transition: 0.2s;
   cursor: pointer;
