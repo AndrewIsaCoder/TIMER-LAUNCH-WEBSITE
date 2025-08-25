@@ -149,3 +149,19 @@ box-shadow: 0 6px 32px rgba(0,0,0,0.28);
 #newsletter-modal{
   text-align: center;
 }
+
+.partners-section{
+  margin-left: 80px;
+  text-align: left;
+  color: white;
+}
+
+.Partners-ad{
+  margin-bottom: 0.5 em;
+  text-align: left;
+}
+
+#linie-ad{
+  width: 30%;
+  margin-left: 0px;
+}
